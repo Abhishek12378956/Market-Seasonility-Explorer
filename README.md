@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 @@ .. @@
  The Market Seasonality Explorer now has comprehensive test coverage ensuring code quality, reliability, and maintainability! 
@@ -255,3 +256,7 @@
 - `test` — Runs unit tests with Vitest.
 - `test:ui` — Runs Vitest in UI mode.
 - `test:coverage` — Runs tests and reports coverage.
+=======
+# Market-Seasonility-Explorer
+"Market Seasonality Explorer" typically refers to a tool, dashboard, or system used to analyze how markets behave at different times of the year — based on historical trends and recurring patterns.
+>>>>>>> bf216134945f27639ba2f31db15db5d57527ddd9
