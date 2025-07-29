@@ -174,6 +174,7 @@ function App() {
               currentDate={currentDate}
               data={data}
               timeframe={timeframe}
+              activeMetric={activeMetric}
               selectedDate={selectedDate}
               onDateSelect={handleDateSelect}
             />
@@ -205,20 +206,60 @@ function App() {
           <h3 className="text-white font-semibold mb-3">Legend</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
             <div>
-              <h4 className="text-gray-300 font-medium mb-2">Volatility Colors</h4>
+              <h4 className="text-gray-300 font-medium mb-2">
+                {activeMetric === 'volatility' && 'Volatility Colors'}
+                {activeMetric === 'liquidity' && 'Liquidity Colors'}
+                {activeMetric === 'performance' && 'Performance Colors'}
+              </h4>
               <div className="space-y-1">
-                <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-green-500 rounded"></div>
-                  <span className="text-gray-400">Low (0-2%)</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-yellow-400 rounded"></div>
-                  <span className="text-gray-400">Medium (2-6%)</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-red-500 rounded"></div>
-                  <span className="text-gray-400">High (6%+)</span>
-                </div>
+                {activeMetric === 'volatility' && (
+                  <>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-green-500 rounded"></div>
+                      <span className="text-gray-400">Low (0-2%)</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-yellow-400 rounded"></div>
+                      <span className="text-gray-400">Medium (2-6%)</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-red-500 rounded"></div>
+                      <span className="text-gray-400">High (6%+)</span>
+                    </div>
+                  </>
+                )}
+                {activeMetric === 'liquidity' && (
+                  <>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-blue-500 rounded"></div>
+                      <span className="text-gray-400">High (80%+)</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-blue-300 rounded"></div>
+                      <span className="text-gray-400">Medium (40-80%)</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-blue-100 rounded"></div>
+                      <span className="text-gray-400">Low (0-40%)</span>
+                    </div>
+                  </>
+                )}
+                {activeMetric === 'performance' && (
+                  <>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-green-500 rounded"></div>
+                      <span className="text-gray-400">Positive (3%+)</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-gray-400 rounded"></div>
+                      <span className="text-gray-400">Neutral (-1% to 1%)</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-red-500 rounded"></div>
+                      <span className="text-gray-400">Negative (-3%+)</span>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
             
@@ -227,7 +268,7 @@ function App() {
               <div className="space-y-1">
                 <div className="flex items-center space-x-2">
                   <div className="w-4 h-1 bg-white rounded"></div>
-                  <span className="text-gray-400">Volatility bar</span>
+                  <span className="text-gray-400">{activeMetric} bar</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>

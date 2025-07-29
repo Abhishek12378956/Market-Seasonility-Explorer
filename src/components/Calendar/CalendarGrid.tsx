@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { CalendarCellData, TooltipData, TimeframeType, FinancialData } from '../../types/financial';
+import { CalendarCellData, TooltipData, TimeframeType, FinancialData, MetricType } from '../../types/financial';
 import { CalendarCell } from './CalendarCell';
 import { Tooltip } from '../UI/Tooltip';
 import { getDaysInMonth, getFirstDayOfMonth, isToday, formatDate } from '../../utils/dateHelpers';
@@ -8,6 +8,7 @@ interface CalendarGridProps {
   currentDate: Date;
   data: FinancialData[];
   timeframe: TimeframeType;
+  activeMetric: MetricType;
   selectedDate: Date | null;
   onDateSelect: (date: Date, data: CalendarCellData) => void;
 }
@@ -16,6 +17,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
   currentDate,
   data,
   timeframe,
+  activeMetric,
   selectedDate,
   onDateSelect,
 }) => {
@@ -175,6 +177,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
           <CalendarCell
             key={`${cellData.date}-${index}`}
             data={cellData}
+            activeMetric={activeMetric}
             onClick={handleCellClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
