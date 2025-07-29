@@ -34,6 +34,7 @@ describe('CalendarCell', () => {
     render(
       <CalendarCell
         data={mockData}
+        activeMetric="performance"
         onClick={mockOnClick}
         onMouseEnter={mockOnMouseEnter}
         onMouseLeave={mockOnMouseLeave}
@@ -49,6 +50,7 @@ describe('CalendarCell', () => {
     render(
       <CalendarCell
         data={mockData}
+        activeMetric="performance"
         onClick={mockOnClick}
         onMouseEnter={mockOnMouseEnter}
         onMouseLeave={mockOnMouseLeave}
@@ -65,6 +67,7 @@ describe('CalendarCell', () => {
     render(
       <CalendarCell
         data={mockData}
+        activeMetric="performance"
         onClick={mockOnClick}
         onMouseEnter={mockOnMouseEnter}
         onMouseLeave={mockOnMouseLeave}
@@ -86,6 +89,7 @@ describe('CalendarCell', () => {
     render(
       <CalendarCell
         data={todayData}
+        activeMetric="performance"
         onClick={mockOnClick}
         onMouseEnter={mockOnMouseEnter}
         onMouseLeave={mockOnMouseLeave}
@@ -102,6 +106,7 @@ describe('CalendarCell', () => {
     render(
       <CalendarCell
         data={negativeData}
+        activeMetric="performance"
         onClick={mockOnClick}
         onMouseEnter={mockOnMouseEnter}
         onMouseLeave={mockOnMouseLeave}
@@ -117,6 +122,7 @@ describe('CalendarCell', () => {
     render(
       <CalendarCell
         data={nonCurrentMonthData}
+        activeMetric="performance"
         onClick={mockOnClick}
         onMouseEnter={mockOnMouseEnter}
         onMouseLeave={mockOnMouseLeave}
